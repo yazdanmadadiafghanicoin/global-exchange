@@ -4,439 +4,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101d35">
+<meta name="theme-color" content="#102b46">
 <title>Global Exchange | صرافی جهانی</title>
-
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;
- font-family:Tahoma,Arial,sans-serif;
- background:#f1f4f9;
- color:#17243b
-}
-header{
- background:#101d35;
- color:white;
- padding:22px 15px
-}
-nav{
- max-width:1050px;
- margin:auto;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:10px
-}
-.logo{font-size:21px;font-weight:bold;color:#e8bd62}
-nav span{font-size:13px}
-main{max-width:950px;margin:25px auto;padding:0 14px}
-.hero{text-align:center;margin:25px 0}
-.hero h1{font-size:25px}
-.hero p{color:#68758b;line-height:2;font-size:14px}
-.card{
- background:white;
- border-radius:17px;
- padding:21px;
- margin-bottom:18px;
- box-shadow:0 5px 25px #17243b0c
-}
-.card h2{font-size:19px;margin-top:0}
-label{display:block;font-size:13px;font-weight:bold;margin:14px 0 8px}
-input,select{
- width:100%;
- padding:14px;
- border:1px solid #dce3ed;
- border-radius:10px;
- font-size:15px;
- background:white;
- color:#17243b
-}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-button{
- border:0;
- border-radius:10px;
- padding:14px;
- background:#c69b43;
- color:white;
- font-size:15px;
- font-weight:bold;
- cursor:pointer
-}
-button:disabled{opacity:.6;cursor:wait}
-.swap{
- display:block;
- width:48px;
- height:43px;
- margin:13px auto;
- font-size:23px;
- padding:5px
-}
-.convert{width:100%;margin-top:5px}
-.result{
- background:#101d35;
- color:white;
- border-radius:14px;
- padding:20px;
- margin-top:18px
-}
-.result small{color:#c9d4e8}
-.result strong{
- display:block;
- font-size:27px;
- color:#e8bd62;
- margin:12px 0;
- direction:ltr;
- text-align:right;
- overflow-wrap:anywhere
-}
-.status{font-size:12px;color:#64748b;line-height:2;margin-top:12px}
-.rate-list{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px
-}
-.rate{
- background:#f3f6fa;
- padding:13px;
- border-radius:10px;
- font-size:13px;
- direction:rtl
-}
-.rate b{display:block;margin-bottom:8px}
-.notice{
- background:#fff8e8;
- border:1px solid #f1dfb5;
- color:#76551c;
- padding:14px;
- border-radius:10px;
- font-size:12px;
- line-height:2
-}
-footer{
- text-align:center;
- padding:25px;
- color:#748096;
- font-size:12px;
- line-height:2
-}
-@media(max-width:600px){
- .grid{grid-template-columns:1fr}
- .rate-list{grid-template-columns:1fr 1fr}
- .hero h1{font-size:21px}
- .card{padding:16px}
-}
+body{margin:0;background:#f1f5f9;color:#172b40;font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,#102b46,#176b63);color:white;padding:28px 18px;text-align:center}
+header h1{margin:0 0 10px;font-size:27px}
+header p{margin:0;color:#d8e9e8}
+main{max-width:850px;margin:22px auto;padding:0 14px}
+.card{background:white;border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 4px 18px #142b4010}
+h2{font-size:19px;margin:0 0 12px}
+.description{font-size:13px;line-height:1.9;color:#64748b}
+.source{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+a,.btn{display:inline-block;text-decoration:none;background:#126b60;color:white;padding:11px 15px;border-radius:9px;font-size:13px;border:0;cursor:pointer}
+.market{border-right:5px solid #159477}
+.official{border-right:5px solid #2472bb}
+label{display:block;font-size:13px;margin:13px 0 7px}
+input,select{width:100%;padding:13px;border:1px solid #d6dee8;border-radius:9px;font-size:16px;background:white}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.result{background:#eaf5f2;padding:16px;border-radius:10px;margin-top:15px;font-size:17px;font-weight:bold;text-align:center}
+.small{font-size:12px;color:#64748b;line-height:1.8}
+button{font-family:inherit}
+footer{text-align:center;padding:25px;color:#64748b;font-size:12px}
 </style>
 </head>
-
 <body>
-
 <header>
-<nav>
-<div class="logo">🌍 GLOBAL EXCHANGE</div>
-<span>صرافی جهانی ارز</span>
-</nav>
+<h1>🌍 Global Exchange</h1>
+<p>صرافی جهانی و مقایسه نرخ ارز افغانستان</p>
 </header>
 
 <main>
-
-<section class="hero">
-<h1>به صرافی جهانی خوش آمدید</h1>
-<p>
-ارزهای افغانستان و جهان را مشاهده کنید و مقدار تبدیل ارز را محاسبه نمایید.
+<section class="card official">
+<h2>🏦 نرخ رسمی بانک مرکزی افغانستان</h2>
+<p class="description">
+نرخ‌های رسمی خرید و فروش نقدی و انتقالی را مستقیماً در وب‌سایت بانک مرکزی مشاهده کنید.
 </p>
+<div class="source">
+<span class="small">منبع رسمی: Da Afghanistan Bank</span>
+<a href="https://dab.gov.af/exchange-rates" target="_blank" rel="noopener">مشاهده نرخ رسمی ↗</a>
+</div>
+</section>
+
+<section class="card market">
+<h2>🏪 نرخ بازار سرای شهزاده کابل</h2>
+<p class="description">
+نرخ خرید و فروش بازار کابل را از منبع نرخ‌های سرای شهزاده مشاهده کنید.
+</p>
+<div class="source">
+<span class="small">منبع بازار: Sarafi.af</span>
+<a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada" target="_blank" rel="noopener">مشاهده نرخ بازار ↗</a>
+</div>
 </section>
 
 <section class="card">
-<h2>💱 تبدیل ارز</h2>
+<h2>🧮 ماشین‌حساب تبدیل ارز</h2>
+<p class="description">
+نرخ خرید یا فروش را از یکی از منابع بالا وارد کنید. برنامه بر اساس نرخ واردشده محاسبه می‌کند.
+</p>
 
-<label for="amount">مبلغ مورد نظر</label>
-<input id="amount" type="number" min="0" step="any" value="100">
+<label>نوع نرخ</label>
+<select id="rateType">
+<option value="market">نرخ بازار سرای شهزاده</option>
+<option value="official">نرخ رسمی بانک مرکزی</option>
+</select>
 
 <div class="grid">
 <div>
-<label for="from">از ارز</label>
-<select id="from">
-<option value="USD">USD - دلار آمریکا</option>
-</select>
+<label>مبلغ ارز</label>
+<input id="amount" type="number" min="0" step="any" value="100">
 </div>
-
 <div>
-<label for="to">به ارز</label>
-<select id="to">
-<option value="AFN">AFN - افغانی افغانستان</option>
+<label>ارز مبدأ</label>
+<select id="currency">
+<option value="USD">دالر آمریکا (USD)</option>
+<option value="EUR">یورو (EUR)</option>
+<option value="GBP">پوند (GBP)</option>
+<option value="PKR">روپیه پاکستان (PKR)</option>
+<option value="INR">روپیه هند (INR)</option>
+<option value="AED">درهم امارات (AED)</option>
+<option value="SAR">ریال سعودی (SAR)</option>
+<option value="TRY">لیره ترکیه (TRY)</option>
+<option value="CAD">دالر کانادا (CAD)</option>
+<option value="AUD">دالر آسترالیا (AUD)</option>
+<option value="CHF">فرانک سویس (CHF)</option>
+<option value="CNY">یوان چین (CNY)</option>
 </select>
 </div>
 </div>
 
-<button class="swap" id="swap" type="button">⇄</button>
-
-<button class="convert" id="convert" type="button">
-محاسبه تبدیل ارز
-</button>
-
-<div class="result">
-<small>مبلغ تبدیل‌شده</small>
-<strong id="output">در حال دریافت نرخ...</strong>
-<div id="details">لطفاً صبر کنید</div>
+<div class="grid">
+<div>
+<label>نوع معامله</label>
+<select id="trade">
+<option value="buy">خرید ارز</option>
+<option value="sell">فروش ارز</option>
+</select>
+</div>
+<div>
+<label>نرخ هر واحد به افغانی</label>
+<input id="rate" type="number" min="0" step="any" placeholder="مثلاً 66.25">
+</div>
 </div>
 
-<p class="status" id="update">
-در حال اتصال به منبع نرخ ارز...
-</p>
+<button class="btn" style="width:100%;margin-top:17px" onclick="calculate()">محاسبه تبدیل</button>
+<div class="result" id="result">نتیجه محاسبه اینجا نمایش داده می‌شود</div>
+<p class="small" id="rateNote">نرخ را از منبع انتخاب‌شده وارد کنید.</p>
 </section>
 
 <section class="card">
-<h2>📊 نرخ ارزهای مهم در برابر دلار</h2>
-<div class="rate-list" id="rates">
-<div class="rate">در حال دریافت اطلاعات...</div>
+<h2>🔄 تازه‌سازی منابع</h2>
+<p class="description">
+برای دیدن آخرین نرخ منتشرشده، صفحه منبع را دوباره باز کنید. تازه‌سازی این صفحه به‌تنهایی نرخ بازار را تغییر نمی‌دهد.
+</p>
+<div class="grid">
+<a href="https://dab.gov.af/exchange-rates" target="_blank" rel="noopener">نرخ بانک مرکزی ↗</a>
+<a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada" target="_blank" rel="noopener">نرخ سرای شهزاده ↗</a>
 </div>
-<p class="status" id="rateDate"></p>
 </section>
 
-<div class="notice">
-<strong>توجه مهم:</strong>
-این نسخه برای مشاهده نرخ مرجع و محاسبه آزمایشی است.
-نرخ‌ها ممکن است با نرخ واقعی صرافی‌ها تفاوت داشته باشند.
-فعلاً واریز، برداشت و خریدوفروش واقعی فعال نیست.
-</div>
-
+<p class="small" style="text-align:center">
+این برنامه فعلاً ماشین‌حساب و نمایش‌دهنده منابع نرخ ارز است؛ انتقال پول یا معامله واقعی انجام نمی‌دهد.
+</p>
 </main>
 
-<footer>
-GLOBAL EXCHANGE © 2026
-<br>
-سامانه آزمایشی تبدیل ارزهای بین‌المللی
-</footer>
+<footer>Global Exchange © 2026</footer>
 
 <script>
-const API = "https://api.frankfurter.dev/v2";
+function calculate(){
+ const amount=Number(document.getElementById("amount").value);
+ const rate=Number(document.getElementById("rate").value);
+ const currency=document.getElementById("currency").value;
+ const trade=document.getElementById("trade").value;
+ const type=document.getElementById("rateType").value;
+ const result=document.getElementById("result");
+ const note=document.getElementById("rateNote");
 
-const from = document.getElementById("from");
-const to = document.getElementById("to");
-const amount = document.getElementById("amount");
-const output = document.getElementById("output");
-const details = document.getElementById("details");
-const update = document.getElementById("update");
-const ratesBox = document.getElementById("rates");
-const convertButton = document.getElementById("convert");
-
-let currencyNames = {};
-
-const persianNames = {
- AFN:"افغانی افغانستان",
- USD:"دلار آمریکا",
- EUR:"یورو",
- GBP:"پوند انگلیس",
- PKR:"روپیه پاکستان",
- INR:"روپیه هند",
- AED:"درهم امارات",
- TRY:"لیر ترکیه",
- CAD:"دلار کانادا",
- AUD:"دلار استرالیا",
- CHF:"فرانک سوئیس",
- JPY:"ین ژاپن",
- CNY:"یوان چین",
- SAR:"ریال عربستان",
- QAR:"ریال قطر",
- IRR:"ریال ایران"
-};
-
-function currencyLabel(code){
- return code + " - " + (persianNames[code] || currencyNames[code] || code);
-}
-
-async function requestJSON(url){
- const response = await fetch(url,{cache:"no-store"});
- if(!response.ok){
-  throw new Error("HTTP " + response.status);
- }
- return await response.json();
-}
-
-async function loadCurrencies(){
- try{
-  const list = await requestJSON(API + "/currencies");
-
-  if(!Array.isArray(list)){
-   throw new Error("Invalid currency list");
-  }
-
-  currencyNames = {};
-
-  list.forEach(item=>{
-   if(item.iso_code){
-    currencyNames[item.iso_code] = item.name || item.iso_code;
-   }
-  });
-
-  // افغانی را در فهرست نگه می‌داریم
-  currencyNames.AFN = currencyNames.AFN || "Afghan Afghani";
-
-  const codes = Object.keys(currencyNames).sort();
-
-  from.innerHTML = "";
-  to.innerHTML = "";
-
-  codes.forEach(code=>{
-   from.add(new Option(currencyLabel(code),code));
-   to.add(new Option(currencyLabel(code),code));
-  });
-
-  from.value = "USD";
-  to.value = "AFN";
-
-  if(to.value !== "AFN"){
-   to.value = codes.includes("EUR") ? "EUR" : codes[0];
-  }
-
-  update.textContent =
-   "فهرست ارزها دریافت شد. در حال دریافت نرخ تبدیل...";
-
-  await convertCurrency();
-  await loadMarketRates();
-
- }catch(error){
-  currencyNames.AFN = "افغانی افغانستان";
-  update.textContent =
-   "دریافت فهرست ارزها ناموفق بود. اتصال اینترنت را بررسی کنید.";
-
-  output.textContent = "ناموجود";
-  details.textContent = "امکان دریافت اطلاعات ارزها وجود ندارد.";
- }
-}
-
-async function getRate(base,target){
- if(base === target){
-  return {rate:1,date:""};
- }
-
- const data = await requestJSON(
-  API + "/rate/" +
-  encodeURIComponent(base.toLowerCase()) + "/" +
-  encodeURIComponent(target.toLowerCase())
- );
-
- if(!data || !Number.isFinite(Number(data.rate))){
-  throw new Error("Rate unavailable");
- }
-
- return {
-  rate:Number(data.rate),
-  date:data.date || ""
- };
-}
-
-async function convertCurrency(){
- const value = Number(amount.value);
- const base = from.value;
- const target = to.value;
-
- if(!Number.isFinite(value) || value <= 0){
-  output.textContent = "مبلغ نامعتبر";
-  details.textContent = "یک مبلغ بیشتر از صفر وارد کنید.";
+ if(!Number.isFinite(amount)||amount<0||!Number.isFinite(rate)||rate<=0){
+  result.textContent="لطفاً مبلغ و نرخ معتبر وارد کنید.";
   return;
  }
 
- if(!base || !target){
-  output.textContent = "ارز انتخاب نشده";
-  return;
- }
+ const total=amount*rate;
+ result.textContent=amount.toLocaleString("en-US")+" "+currency+
+ " = "+total.toLocaleString("en-US",{maximumFractionDigits:2})+" افغانی";
 
- convertButton.disabled = true;
- output.textContent = "در حال محاسبه...";
- details.textContent = "";
-
- try{
-  const result = await getRate(base,target);
-  const converted = value * result.rate;
-
-  output.textContent =
-   new Intl.NumberFormat("en-US",{
-    maximumFractionDigits:4
-   }).format(converted) + " " + target;
-
-  details.textContent =
-   value.toLocaleString("en-US") + " " + base +
-   " = " +
-   converted.toLocaleString("en-US",{
-    maximumFractionDigits:4
-   }) + " " + target;
-
-  update.textContent =
-   "نرخ تبدیل: 1 " + base + " = " +
-   result.rate + " " + target +
-   (result.date ? " | تاریخ نرخ: " + result.date : "");
-
- }catch(error){
-  output.textContent = "نرخ در دسترس نیست";
-  details.textContent =
-   "برای این جفت ارز نرخ مرجع قابل دریافت نیست.";
-  update.textContent =
-   "این جفت ارز را فعلاً نمی‌توان تبدیل کرد. لطفاً بعداً تلاش کنید.";
- }finally{
-  convertButton.disabled = false;
- }
+ const source=type==="market"?"بازار سرای شهزاده":"بانک مرکزی افغانستان";
+ const action=trade==="buy"?"خرید ارز":"فروش ارز";
+ note.textContent="محاسبه بر اساس نرخ واردشده برای "+action+
+ " از منبع "+source+" انجام شد. این نرخ توسط شما وارد شده است.";
 }
-
-async function loadMarketRates(){
- const codes = [
-  "AFN","EUR","GBP","PKR","INR",
-  "AED","TRY","CAD","JPY"
- ];
-
- ratesBox.innerHTML = "";
-
- for(const code of codes){
-  if(!currencyNames[code]) continue;
-
-  const item = document.createElement("div");
-  item.className = "rate";
-  item.textContent = "در حال دریافت " + code + "...";
-  ratesBox.appendChild(item);
-
-  try{
-   const result = await getRate("USD",code);
-
-   item.innerHTML = "";
-
-   const title = document.createElement("b");
-   title.textContent = currencyLabel(code);
-
-   const value = document.createElement("span");
-   value.textContent =
-    result.rate.toLocaleString("en-US",{
-     maximumFractionDigits:5
-    }) + " " + code;
-
-   item.append(title,value);
-
-  }catch(error){
-   item.textContent = code + " - نرخ موجود نیست";
-  }
- }
-
- document.getElementById("rateDate").textContent =
-  "ارز پایه: دلار آمریکا | منبع: Frankfurter";
-}
-
-document.getElementById("convert")
- .addEventListener("click",convertCurrency);
-
-document.getElementById("swap")
- .addEventListener("click",()=>{
-  const oldFrom = from.value;
-  from.value = to.value;
-  to.value = oldFrom;
-  convertCurrency();
- });
-
-amount.addEventListener("input",convertCurrency);
-from.addEventListener("change",convertCurrency);
-to.addEventListener("change",convertCurrency);
-
-loadCurrencies();
 </script>
-
 </body>
 </html>
