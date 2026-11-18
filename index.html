@@ -6,132 +6,366 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#102b46">
 <title>Global Exchange | صرافی جهانی</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f1f5f9;color:#172b40;font-family:Tahoma,Arial,sans-serif}
-header{background:linear-gradient(135deg,#102b46,#176b63);color:white;padding:28px 18px;text-align:center}
-header h1{margin:0 0 10px;font-size:27px}
-header p{margin:0;color:#d8e9e8}
+body{
+ margin:0;
+ background:#f1f5f9;
+ color:#172b40;
+ font-family:Tahoma,Arial,sans-serif;
+}
+header{
+ background:linear-gradient(135deg,#102b46,#176b63);
+ color:white;
+ padding:30px 16px;
+ text-align:center;
+}
+header h1{margin:0 0 10px;font-size:28px}
+header p{margin:0;color:#d8e9e8;line-height:1.8}
 main{max-width:850px;margin:22px auto;padding:0 14px}
-.card{background:white;border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 4px 18px #142b4010}
+.card{
+ background:white;
+ border-radius:16px;
+ padding:20px;
+ margin-bottom:18px;
+ box-shadow:0 4px 18px #142b4010;
+}
 h2{font-size:19px;margin:0 0 12px}
-.description{font-size:13px;line-height:1.9;color:#64748b}
-.source{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-a,.btn{display:inline-block;text-decoration:none;background:#126b60;color:white;padding:11px 15px;border-radius:9px;font-size:13px;border:0;cursor:pointer}
+.description,.small{
+ font-size:13px;
+ line-height:1.9;
+ color:#64748b;
+}
+.source{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ flex-wrap:wrap;
+}
+a,.btn{
+ display:inline-block;
+ text-decoration:none;
+ background:#126b60;
+ color:white;
+ padding:12px 15px;
+ border-radius:9px;
+ font-size:13px;
+ border:0;
+ cursor:pointer;
+ text-align:center;
+ font-family:inherit;
+}
+.btn:disabled{opacity:.6;cursor:wait}
 .market{border-right:5px solid #159477}
 .official{border-right:5px solid #2472bb}
 label{display:block;font-size:13px;margin:13px 0 7px}
-input,select{width:100%;padding:13px;border:1px solid #d6dee8;border-radius:9px;font-size:16px;background:white}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.result{background:#eaf5f2;padding:16px;border-radius:10px;margin-top:15px;font-size:17px;font-weight:bold;text-align:center}
-.small{font-size:12px;color:#64748b;line-height:1.8}
-button{font-family:inherit}
-footer{text-align:center;padding:25px;color:#64748b;font-size:12px}
+input,select{
+ width:100%;
+ padding:13px;
+ border:1px solid #d6dee8;
+ border-radius:9px;
+ font-size:15px;
+ background:white;
+ color:#172b40;
+ font-family:inherit;
+}
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+}
+.result{
+ background:#eaf5f2;
+ padding:15px;
+ border-radius:10px;
+ margin-top:15px;
+ font-size:14px;
+ line-height:2;
+ font-weight:bold;
+ white-space:pre-line;
+ overflow-wrap:anywhere;
+}
+.notice{
+ background:#fff7e6;
+ border-right:4px solid #e5a12b;
+ padding:12px;
+ border-radius:8px;
+ font-size:12px;
+ line-height:1.9;
+ color:#76521a;
+ margin-top:12px;
+}
+.success{background:#eaf5f2}
+.error{background:#fff0f0;color:#a32222}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#64748b;
+ font-size:12px;
+}
+hr{border:0;border-top:1px solid #e2e8f0;margin:22px 0}
+@media(max-width:550px){
+ .grid{grid-template-columns:1fr}
+ header h1{font-size:24px}
+ .card{padding:16px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<h1>🌍 Global Exchange</h1>
-<p>صرافی جهانی و مقایسه نرخ ارز افغانستان</p>
+ <h1>🌍 Global Exchange</h1>
+ <p>صرافی جهانی و ماشین‌حساب تبدیل ارز</p>
+ <p>افغانستان و کشورهای جهان</p>
 </header>
 
 <main>
+
+<!-- نرخ رسمی بانک مرکزی -->
 <section class="card official">
-<h2>🏦 نرخ رسمی بانک مرکزی افغانستان</h2>
-<p class="description">
-نرخ‌های رسمی خرید و فروش نقدی و انتقالی را مستقیماً در وب‌سایت بانک مرکزی مشاهده کنید.
-</p>
-<div class="source">
-<span class="small">منبع رسمی: Da Afghanistan Bank</span>
-<a href="https://dab.gov.af/exchange-rates" target="_blank" rel="noopener">مشاهده نرخ رسمی ↗</a>
-</div>
+ <h2>🏦 نرخ رسمی بانک مرکزی افغانستان</h2>
+ <p class="description">
+ نرخ‌های رسمی ارز را از وب‌سایت بانک مرکزی افغانستان بررسی کنید.
+ </p>
+ <div class="source">
+  <span class="small">منبع: Da Afghanistan Bank</span>
+  <a href="https://dab.gov.af/exchange-rates"
+     target="_blank" rel="noopener">مشاهده نرخ رسمی ↗</a>
+ </div>
 </section>
 
+<!-- نرخ بازار -->
 <section class="card market">
-<h2>🏪 نرخ بازار سرای شهزاده کابل</h2>
-<p class="description">
-نرخ خرید و فروش بازار کابل را از منبع نرخ‌های سرای شهزاده مشاهده کنید.
-</p>
-<div class="source">
-<span class="small">منبع بازار: Sarafi.af</span>
-<a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada" target="_blank" rel="noopener">مشاهده نرخ بازار ↗</a>
-</div>
+ <h2>🏪 نرخ بازار سرای شهزاده کابل</h2>
+ <p class="description">
+ برای بررسی نرخ خرید و فروش بازار کابل از منبع نرخ‌های بازار استفاده کنید.
+ </p>
+ <div class="source">
+  <span class="small">منبع بازار: Sarafi.af</span>
+  <a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada"
+     target="_blank" rel="noopener">مشاهده نرخ بازار ↗</a>
+ </div>
 </section>
 
+<!-- ماشین حساب -->
 <section class="card">
-<h2>🧮 ماشین‌حساب تبدیل ارز</h2>
-<p class="description">
-نرخ خرید یا فروش را از یکی از منابع بالا وارد کنید. برنامه بر اساس نرخ واردشده محاسبه می‌کند.
-</p>
+ <h2>🧮 ماشین‌حساب تبدیل ارز</h2>
+ <p class="description">
+ نرخ را از منبع موردنظر بررسی کرده و در کادر نرخ وارد کنید.
+ </p>
 
-<label>نوع نرخ</label>
-<select id="rateType">
-<option value="market">نرخ بازار سرای شهزاده</option>
-<option value="official">نرخ رسمی بانک مرکزی</option>
-</select>
+ <label>منبع نرخ</label>
+ <select id="rateType">
+  <option value="market">بازار سرای شهزاده</option>
+  <option value="official">بانک مرکزی افغانستان</option>
+ </select>
 
-<div class="grid">
-<div>
-<label>مبلغ ارز</label>
-<input id="amount" type="number" min="0" step="any" value="100">
-</div>
-<div>
-<label>ارز مبدأ</label>
-<select id="currency">
-<option value="USD">دالر آمریکا (USD)</option>
-<option value="EUR">یورو (EUR)</option>
-<option value="GBP">پوند (GBP)</option>
-<option value="PKR">روپیه پاکستان (PKR)</option>
-<option value="INR">روپیه هند (INR)</option>
-<option value="AED">درهم امارات (AED)</option>
-<option value="SAR">ریال سعودی (SAR)</option>
-<option value="TRY">لیره ترکیه (TRY)</option>
-<option value="CAD">دالر کانادا (CAD)</option>
-<option value="AUD">دالر آسترالیا (AUD)</option>
-<option value="CHF">فرانک سویس (CHF)</option>
-<option value="CNY">یوان چین (CNY)</option>
-</select>
-</div>
-</div>
+ <div class="grid">
+  <div>
+   <label>مبلغ</label>
+   <input id="amount" type="number" min="0" step="any" value="100">
+  </div>
+  <div>
+   <label>ارز مبدأ</label>
+   <select id="currency">
+    <option value="USD">دالر آمریکا USD</option>
+    <option value="EUR">یورو EUR</option>
+    <option value="GBP">پوند GBP</option>
+    <option value="PKR">روپیه پاکستان PKR</option>
+    <option value="INR">روپیه هند INR</option>
+    <option value="AED">درهم امارات AED</option>
+    <option value="SAR">ریال سعودی SAR</option>
+    <option value="TRY">لیره ترکیه TRY</option>
+    <option value="CAD">دالر کانادا CAD</option>
+    <option value="AUD">دالر آسترالیا AUD</option>
+    <option value="CHF">فرانک سویس CHF</option>
+    <option value="CNY">یوان چین CNY</option>
+   </select>
+  </div>
+ </div>
 
-<div class="grid">
-<div>
-<label>نوع معامله</label>
-<select id="trade">
-<option value="buy">خرید ارز</option>
-<option value="sell">فروش ارز</option>
-</select>
-</div>
-<div>
-<label>نرخ هر واحد به افغانی</label>
-<input id="rate" type="number" min="0" step="any" placeholder="مثلاً 66.25">
-</div>
-</div>
+ <div class="grid">
+  <div>
+   <label>نوع معامله</label>
+   <select id="trade">
+    <option value="buy">خرید ارز</option>
+    <option value="sell">فروش ارز</option>
+   </select>
+  </div>
+  <div>
+   <label>نرخ هر واحد به افغانی</label>
+   <input id="rate" type="number" min="0" step="any"
+          placeholder="مثلاً 66.25">
+  </div>
+ </div>
 
-<button class="btn" style="width:100%;margin-top:17px" onclick="calculate()">محاسبه تبدیل</button>
-<div class="result" id="result">نتیجه محاسبه اینجا نمایش داده می‌شود</div>
-<p class="small" id="rateNote">نرخ را از منبع انتخاب‌شده وارد کنید.</p>
+ <button class="btn" id="calculateBtn"
+         style="width:100%;margin-top:17px"
+         onclick="calculate()">محاسبه تبدیل</button>
+
+ <div class="result" id="result">
+  نتیجه محاسبه اینجا نمایش داده می‌شود
+ </div>
+ <p class="small" id="rateNote">
+  نرخ را از منبع انتخاب‌شده وارد کنید.
+ </p>
 </section>
 
+<!-- درخواست انتقال آزمایشی -->
 <section class="card">
-<h2>🔄 تازه‌سازی منابع</h2>
-<p class="description">
-برای دیدن آخرین نرخ منتشرشده، صفحه منبع را دوباره باز کنید. تازه‌سازی این صفحه به‌تنهایی نرخ بازار را تغییر نمی‌دهد.
-</p>
-<div class="grid">
-<a href="https://dab.gov.af/exchange-rates" target="_blank" rel="noopener">نرخ بانک مرکزی ↗</a>
-<a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada" target="_blank" rel="noopener">نرخ سرای شهزاده ↗</a>
-</div>
+ <h2>🌐 درخواست انتقال بین‌المللی پول</h2>
+ <p class="description">
+ در این بخش می‌توانید یک درخواست آزمایشی از یک کشور به کشور دیگر ثبت کنید.
+ </p>
+
+ <div class="notice">
+  توجه: این نسخه پول واقعی انتقال نمی‌دهد. ثبت درخواست فقط برای آزمایش سیستم و دریافت کد پیگیری است. کارمزد ۲ درصد نیز صرفاً نمونه محاسباتی است.
+ </div>
+
+ <div class="grid">
+  <div>
+   <label>کشور مبدأ</label>
+   <select id="originCountry">
+    <option value="Afghanistan">افغانستان</option>
+    <option value="Germany">آلمان</option>
+    <option value="Iran">ایران</option>
+    <option value="Pakistan">پاکستان</option>
+    <option value="Turkey">ترکیه</option>
+    <option value="United Arab Emirates">امارات</option>
+    <option value="United States">آمریکا</option>
+    <option value="United Kingdom">بریتانیا</option>
+    <option value="India">هند</option>
+    <option value="Saudi Arabia">عربستان</option>
+   </select>
+  </div>
+
+  <div>
+   <label>کشور مقصد</label>
+   <select id="destinationCountry">
+    <option value="Afghanistan">افغانستان</option>
+    <option value="Germany">آلمان</option>
+    <option value="Iran">ایران</option>
+    <option value="Pakistan">پاکستان</option>
+    <option value="Turkey">ترکیه</option>
+    <option value="United Arab Emirates">امارات</option>
+    <option value="United States">آمریکا</option>
+    <option value="United Kingdom">بریتانیا</option>
+    <option value="India">هند</option>
+    <option value="Saudi Arabia">عربستان</option>
+   </select>
+  </div>
+ </div>
+
+ <div class="grid">
+  <div>
+   <label>ارز ارسال</label>
+   <select id="fromCurrency">
+    <option value="EUR">یورو EUR</option>
+    <option value="USD">دالر USD</option>
+    <option value="AFN">افغانی AFN</option>
+    <option value="PKR">روپیه PKR</option>
+    <option value="AED">درهم AED</option>
+    <option value="TRY">لیره TRY</option>
+    <option value="GBP">پوند GBP</option>
+    <option value="INR">روپیه هند INR</option>
+    <option value="SAR">ریال سعودی SAR</option>
+   </select>
+  </div>
+
+  <div>
+   <label>ارز دریافت</label>
+   <select id="toCurrency">
+    <option value="AFN">افغانی AFN</option>
+    <option value="EUR">یورو EUR</option>
+    <option value="USD">دالر USD</option>
+    <option value="PKR">روپیه PKR</option>
+    <option value="AED">درهم AED</option>
+    <option value="TRY">لیره TRY</option>
+    <option value="GBP">پوند GBP</option>
+    <option value="INR">روپیه هند INR</option>
+    <option value="SAR">ریال سعودی SAR</option>
+   </select>
+  </div>
+ </div>
+
+ <label>مبلغ ارسالی</label>
+ <input id="transferAmount" type="number" min="1"
+        step="any" placeholder="مثلاً 100">
+
+ <label>نرخ تبدیل هر واحد ارز ارسال به ارز مقصد</label>
+ <input id="transferRate" type="number" min="0.000001"
+        step="any" placeholder="نرخ معتبر را وارد کنید">
+
+ <p class="small">
+ کارمزد نمونه محاسبه: ۲ درصد مبلغ ارسالی؛ نرخ را خودتان وارد می‌کنید.
+ </p>
+
+ <button class="btn" id="submitTransferBtn"
+         style="width:100%;margin-top:12px"
+         onclick="submitTransfer()">
+ ثبت درخواست آزمایشی
+ </button>
+
+ <div class="result" id="transferResult">
+ نتیجه درخواست اینجا نمایش داده می‌شود
+ </div>
+
+ <hr>
+
+ <h2>🔎 پیگیری درخواست</h2>
+ <p class="description">
+ کد پیگیری را وارد کنید تا وضعیت درخواست آزمایشی خود را ببینید.
+ </p>
+
+ <label>کد پیگیری</label>
+ <input id="trackingCode" placeholder="کد پیگیری را وارد کنید">
+
+ <button class="btn" id="trackBtn"
+         style="width:100%;margin-top:12px"
+         onclick="trackTransfer()">
+ پیگیری درخواست
+ </button>
+
+ <div class="result" id="trackingResult">
+ وضعیت درخواست اینجا نمایش داده می‌شود
+ </div>
+</section>
+
+<!-- تازه سازی منابع -->
+<section class="card">
+ <h2>🔄 دسترسی سریع به نرخ‌ها</h2>
+ <p class="description">
+ برای دیدن نرخ‌های جدید، منابع را دوباره باز کنید. نرخ‌ها در این برنامه به‌صورت خودکار دریافت نمی‌شوند.
+ </p>
+ <div class="grid">
+  <a href="https://dab.gov.af/exchange-rates"
+     target="_blank" rel="noopener">نرخ بانک مرکزی ↗</a>
+  <a href="https://sarafi.af/fa/exchange-rates/sarai-shahzada"
+     target="_blank" rel="noopener">نرخ سرای شهزاده ↗</a>
+ </div>
 </section>
 
 <p class="small" style="text-align:center">
-این برنامه فعلاً ماشین‌حساب و نمایش‌دهنده منابع نرخ ارز است؛ انتقال پول یا معامله واقعی انجام نمی‌دهد.
+ Global Exchange در نسخه فعلی ماشین‌حساب و ثبت درخواست آزمایشی است.
+ هیچ معامله یا انتقال واقعی پول انجام نمی‌شود.
 </p>
+
 </main>
 
-<footer>Global Exchange © 2026</footer>
+<footer>
+ Global Exchange © 2026
+</footer>
 
 <script>
+function formatNumber(value){
+ return Number(value).toLocaleString("en-US",{
+  maximumFractionDigits:2
+ });
+}
+
 function calculate(){
  const amount=Number(document.getElementById("amount").value);
  const rate=Number(document.getElementById("rate").value);
@@ -141,20 +375,156 @@ function calculate(){
  const result=document.getElementById("result");
  const note=document.getElementById("rateNote");
 
- if(!Number.isFinite(amount)||amount<0||!Number.isFinite(rate)||rate<=0){
+ if(!Number.isFinite(amount)||amount<=0||
+    !Number.isFinite(rate)||rate<=0){
   result.textContent="لطفاً مبلغ و نرخ معتبر وارد کنید.";
+  result.className="result error";
   return;
  }
 
  const total=amount*rate;
- result.textContent=amount.toLocaleString("en-US")+" "+currency+
- " = "+total.toLocaleString("en-US",{maximumFractionDigits:2})+" افغانی";
-
- const source=type==="market"?"بازار سرای شهزاده":"بانک مرکزی افغانستان";
+ const source=type==="market"?
+  "بازار سرای شهزاده":"بانک مرکزی افغانستان";
  const action=trade==="buy"?"خرید ارز":"فروش ارز";
- note.textContent="محاسبه بر اساس نرخ واردشده برای "+action+
- " از منبع "+source+" انجام شد. این نرخ توسط شما وارد شده است.";
+
+ result.textContent=
+  formatNumber(amount)+" "+currency+
+  " = "+formatNumber(total)+" افغانی";
+
+ result.className="result success";
+ note.textContent=
+  "محاسبه برای "+action+" بر اساس نرخ واردشده از "+
+  source+" انجام شد. نرخ به‌صورت دستی وارد شده است.";
+}
+
+async function submitTransfer(){
+ const button=document.getElementById("submitTransferBtn");
+ const box=document.getElementById("transferResult");
+
+ const originCountry=document.getElementById("originCountry").value;
+ const destinationCountry=document.getElementById("destinationCountry").value;
+ const fromCurrency=document.getElementById("fromCurrency").value;
+ const toCurrency=document.getElementById("toCurrency").value;
+ const amount=Number(document.getElementById("transferAmount").value);
+ const rate=Number(document.getElementById("transferRate").value);
+
+ if(originCountry===destinationCountry){
+  box.textContent="کشور مبدأ و مقصد باید متفاوت باشند.";
+  box.className="result error";
+  return;
+ }
+
+ if(fromCurrency===toCurrency){
+  box.textContent="ارز ارسال و دریافت باید متفاوت باشد.";
+  box.className="result error";
+  return;
+ }
+
+ if(!Number.isFinite(amount)||amount<=0||
+    !Number.isFinite(rate)||rate<=0){
+  box.textContent="لطفاً مبلغ و نرخ معتبر وارد کنید.";
+  box.className="result error";
+  return;
+ }
+
+ button.disabled=true;
+ button.textContent="در حال ثبت درخواست...";
+ box.textContent="لطفاً منتظر بمانید...";
+ box.className="result";
+
+ try{
+  const response=await fetch("/api/transfers",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({
+    originCountry,
+    destinationCountry,
+    fromCurrency,
+    toCurrency,
+    amount,
+    rate
+   })
+  });
+
+  const data=await response.json();
+
+  if(!response.ok||!data.ok){
+   throw new Error(data.message||"ثبت درخواست ناموفق بود.");
+  }
+
+  document.getElementById("trackingCode").value=
+   data.trackingCode;
+
+  box.textContent=
+   "درخواست آزمایشی ثبت شد.\n"+
+   "مبلغ ارسالی: "+formatNumber(data.amount)+" "+data.fromCurrency+"\n"+
+   "کارمزد نمونه: "+formatNumber(data.estimatedFee)+" "+data.fromCurrency+"\n"+
+   "مبلغ تخمینی دریافت: "+formatNumber(data.estimatedPayout)+" "+data.toCurrency+"\n"+
+   "کد پیگیری: "+data.trackingCode+"\n"+
+   "وضعیت: "+data.status+"\n"+
+   "هیچ پولی انتقال نشده است.";
+
+  box.className="result success";
+
+ }catch(error){
+  box.textContent="خطا در ثبت درخواست: "+error.message;
+  box.className="result error";
+ }finally{
+  button.disabled=false;
+  button.textContent="ثبت درخواست آزمایشی";
+ }
+}
+
+async function trackTransfer(){
+ const button=document.getElementById("trackBtn");
+ const box=document.getElementById("trackingResult");
+ const code=document.getElementById("trackingCode").value.trim();
+
+ if(!code){
+  box.textContent="لطفاً کد پیگیری را وارد کنید.";
+  box.className="result error";
+  return;
+ }
+
+ button.disabled=true;
+ button.textContent="در حال بررسی...";
+ box.textContent="در حال بررسی کد پیگیری...";
+ box.className="result";
+
+ try{
+  const response=await fetch(
+   "/api/transfers?code="+encodeURIComponent(code)
+  );
+
+  const data=await response.json();
+
+  if(!response.ok||!data.ok){
+   throw new Error(data.message||"درخواست پیدا نشد.");
+  }
+
+  const t=data.transfer;
+
+  box.textContent=
+   "وضعیت: "+t.status+"\n"+
+   "کشور مبدأ: "+t.origin_country+"\n"+
+   "کشور مقصد: "+t.destination_country+"\n"+
+   "مبلغ: "+formatNumber(t.amount)+" "+t.from_currency+"\n"+
+   "کارمزد نمونه: "+formatNumber(t.estimated_fee)+" "+t.from_currency+"\n"+
+   "مبلغ تخمینی دریافت: "+formatNumber(t.estimated_payout)+" "+t.to_currency+"\n"+
+   "کد پیگیری: "+t.tracking_code+"\n"+
+   "این درخواست آزمایشی است؛ انتقال واقعی انجام نشده است.";
+
+  box.className="result success";
+
+ }catch(error){
+  box.textContent="خطا در پیگیری: "+error.message;
+  box.className="result error";
+ }finally{
+  button.disabled=false;
+  button.textContent="پیگیری درخواست";
+ }
 }
 </script>
+
 </body>
 </html>
