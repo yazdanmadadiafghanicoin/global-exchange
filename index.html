@@ -6,43 +6,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101d35">
 <title>Global Exchange | صرافی جهانی</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f6fb;color:#17243b}
-header{background:#101d35;color:white;padding:22px 16px}
-nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f1f4f9;
+ color:#17243b
+}
+header{
+ background:#101d35;
+ color:white;
+ padding:22px 15px
+}
+nav{
+ max-width:1050px;
+ margin:auto;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px
+}
 .logo{font-size:21px;font-weight:bold;color:#e8bd62}
-nav span{font-size:12px;color:#d5dbea}
-main{max-width:950px;margin:28px auto;padding:0 14px}
-.hero{text-align:center;margin-bottom:25px}
-.hero h1{font-size:26px;color:#17243b}
-.hero p{color:#68758b;font-size:14px;line-height:2}
-.card{background:white;border-radius:18px;padding:22px;box-shadow:0 5px 25px #17243b0d;margin-bottom:18px}
+nav span{font-size:13px}
+main{max-width:950px;margin:25px auto;padding:0 14px}
+.hero{text-align:center;margin:25px 0}
+.hero h1{font-size:25px}
+.hero p{color:#68758b;line-height:2;font-size:14px}
+.card{
+ background:white;
+ border-radius:17px;
+ padding:21px;
+ margin-bottom:18px;
+ box-shadow:0 5px 25px #17243b0c
+}
 .card h2{font-size:19px;margin-top:0}
 label{display:block;font-size:13px;font-weight:bold;margin:14px 0 8px}
-input,select{width:100%;padding:14px;border:1px solid #dce3ed;border-radius:10px;font-size:16px;background:white;color:#17243b}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button{border:0;border-radius:10px;padding:13px 17px;background:#c69b43;color:white;font-size:15px;font-weight:bold;cursor:pointer}
-button:hover{background:#aa8131}
-.swap{display:block;margin:13px auto;width:48px;height:42px;font-size:22px;padding:5px}
-.result{background:#101d35;color:white;border-radius:14px;padding:20px;margin-top:18px}
+input,select{
+ width:100%;
+ padding:14px;
+ border:1px solid #dce3ed;
+ border-radius:10px;
+ font-size:15px;
+ background:white;
+ color:#17243b
+}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+button{
+ border:0;
+ border-radius:10px;
+ padding:14px;
+ background:#c69b43;
+ color:white;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer
+}
+button:disabled{opacity:.6;cursor:wait}
+.swap{
+ display:block;
+ width:48px;
+ height:43px;
+ margin:13px auto;
+ font-size:23px;
+ padding:5px
+}
+.convert{width:100%;margin-top:5px}
+.result{
+ background:#101d35;
+ color:white;
+ border-radius:14px;
+ padding:20px;
+ margin-top:18px
+}
 .result small{color:#c9d4e8}
-.result strong{display:block;font-size:29px;color:#e8bd62;margin:12px 0;direction:ltr;text-align:right;overflow-wrap:anywhere}
-.status{font-size:12px;color:#64748b;margin-top:12px;line-height:1.9}
-.rate-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.rate{background:#f5f7fa;padding:13px;border-radius:10px;font-size:13px}
-.rate b{display:block;margin-bottom:7px}
-footer{text-align:center;padding:25px;color:#748096;font-size:12px;line-height:2}
-.notice{background:#fff8e8;border:1px solid #f1dfb5;color:#76551c;padding:13px;border-radius:10px;font-size:12px;line-height:2}
+.result strong{
+ display:block;
+ font-size:27px;
+ color:#e8bd62;
+ margin:12px 0;
+ direction:ltr;
+ text-align:right;
+ overflow-wrap:anywhere
+}
+.status{font-size:12px;color:#64748b;line-height:2;margin-top:12px}
+.rate-list{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px
+}
+.rate{
+ background:#f3f6fa;
+ padding:13px;
+ border-radius:10px;
+ font-size:13px;
+ direction:rtl
+}
+.rate b{display:block;margin-bottom:8px}
+.notice{
+ background:#fff8e8;
+ border:1px solid #f1dfb5;
+ color:#76551c;
+ padding:14px;
+ border-radius:10px;
+ font-size:12px;
+ line-height:2
+}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#748096;
+ font-size:12px;
+ line-height:2
+}
 @media(max-width:600px){
-.grid{grid-template-columns:1fr}
-.rate-list{grid-template-columns:1fr 1fr}
-.hero h1{font-size:22px}
-.card{padding:17px}
+ .grid{grid-template-columns:1fr}
+ .rate-list{grid-template-columns:1fr 1fr}
+ .hero h1{font-size:21px}
+ .card{padding:16px}
 }
 </style>
 </head>
+
 <body>
+
 <header>
 <nav>
 <div class="logo">🌍 GLOBAL EXCHANGE</div>
@@ -51,42 +139,55 @@ footer{text-align:center;padding:25px;color:#748096;font-size:12px;line-height:2
 </header>
 
 <main>
+
 <section class="hero">
 <h1>به صرافی جهانی خوش آمدید</h1>
-<p>نرخ ارزهای جهان را مشاهده کنید و تبدیل ارز را به آسانی انجام دهید.</p>
+<p>
+ارزهای افغانستان و جهان را مشاهده کنید و مقدار تبدیل ارز را محاسبه نمایید.
+</p>
 </section>
 
 <section class="card">
 <h2>💱 تبدیل ارز</h2>
 
 <label for="amount">مبلغ مورد نظر</label>
-<input id="amount" type="number" min="0" step="any" value="100" placeholder="مبلغ را وارد کنید">
+<input id="amount" type="number" min="0" step="any" value="100">
 
 <div class="grid">
 <div>
 <label for="from">از ارز</label>
-<select id="from"><option value="USD">USD - دلار آمریکا</option></select>
+<select id="from">
+<option value="USD">USD - دلار آمریکا</option>
+</select>
 </div>
+
 <div>
 <label for="to">به ارز</label>
-<select id="to"><option value="AFN">AFN - افغانی</option></select>
+<select id="to">
+<option value="AFN">AFN - افغانی افغانستان</option>
+</select>
 </div>
 </div>
 
-<button class="swap" id="swap" title="تغییر ارزها">⇄</button>
-<button id="convert" style="width:100%">محاسبه تبدیل ارز</button>
+<button class="swap" id="swap" type="button">⇄</button>
+
+<button class="convert" id="convert" type="button">
+محاسبه تبدیل ارز
+</button>
 
 <div class="result">
 <small>مبلغ تبدیل‌شده</small>
 <strong id="output">در حال دریافت نرخ...</strong>
-<div id="details">لطفاً کمی صبر کنید</div>
+<div id="details">لطفاً صبر کنید</div>
 </div>
 
-<p class="status" id="update">در حال اتصال به منبع نرخ ارز...</p>
+<p class="status" id="update">
+در حال اتصال به منبع نرخ ارز...
+</p>
 </section>
 
 <section class="card">
-<h2>📊 نرخ چند ارز مهم</h2>
+<h2>📊 نرخ ارزهای مهم در برابر دلار</h2>
 <div class="rate-list" id="rates">
 <div class="rate">در حال دریافت اطلاعات...</div>
 </div>
@@ -94,146 +195,241 @@ footer{text-align:center;padding:25px;color:#748096;font-size:12px;line-height:2
 </section>
 
 <div class="notice">
-<strong>توجه:</strong> نرخ‌های این نسخه نرخ مرجع هستند و ممکن است با نرخ واقعی صرافی‌ها تفاوت داشته باشند. فعلاً امکان واریز، برداشت یا خریدوفروش واقعی وجود ندارد.
+<strong>توجه مهم:</strong>
+این نسخه برای مشاهده نرخ مرجع و محاسبه آزمایشی است.
+نرخ‌ها ممکن است با نرخ واقعی صرافی‌ها تفاوت داشته باشند.
+فعلاً واریز، برداشت و خریدوفروش واقعی فعال نیست.
 </div>
+
 </main>
 
 <footer>
-GLOBAL EXCHANGE © 2026<br>
+GLOBAL EXCHANGE © 2026
+<br>
 سامانه آزمایشی تبدیل ارزهای بین‌المللی
 </footer>
 
 <script>
-const API = "https://api.frankfurter.dev/v1";
+const API = "https://api.frankfurter.dev/v2";
+
 const from = document.getElementById("from");
 const to = document.getElementById("to");
 const amount = document.getElementById("amount");
 const output = document.getElementById("output");
 const details = document.getElementById("details");
 const update = document.getElementById("update");
+const ratesBox = document.getElementById("rates");
+const convertButton = document.getElementById("convert");
 
 let currencyNames = {};
-let latestRates = {};
+
+const persianNames = {
+ AFN:"افغانی افغانستان",
+ USD:"دلار آمریکا",
+ EUR:"یورو",
+ GBP:"پوند انگلیس",
+ PKR:"روپیه پاکستان",
+ INR:"روپیه هند",
+ AED:"درهم امارات",
+ TRY:"لیر ترکیه",
+ CAD:"دلار کانادا",
+ AUD:"دلار استرالیا",
+ CHF:"فرانک سوئیس",
+ JPY:"ین ژاپن",
+ CNY:"یوان چین",
+ SAR:"ریال عربستان",
+ QAR:"ریال قطر",
+ IRR:"ریال ایران"
+};
+
+function currencyLabel(code){
+ return code + " - " + (persianNames[code] || currencyNames[code] || code);
+}
+
+async function requestJSON(url){
+ const response = await fetch(url,{cache:"no-store"});
+ if(!response.ok){
+  throw new Error("HTTP " + response.status);
+ }
+ return await response.json();
+}
 
 async function loadCurrencies(){
-  try{
-    const response = await fetch(API + "/currencies");
-    if(!response.ok) throw new Error("Currency API error");
-    currencyNames = await response.json();
+ try{
+  const list = await requestJSON(API + "/currencies");
 
-    from.innerHTML = "";
-    to.innerHTML = "";
-
-    Object.entries(currencyNames).forEach(([code,name])=>{
-      const option1 = new Option(code + " - " + name,code);
-      const option2 = new Option(code + " - " + name,code);
-      from.add(option1);
-      to.add(option2);
-    });
-
-    from.value = "USD";
-    to.value = currencyNames.AFN ? "AFN" : "EUR";
-
-    await convertCurrency();
-    await loadMarketRates();
-  }catch(error){
-    update.textContent = "اتصال به سرویس نرخ ارز برقرار نشد. اینترنت را بررسی و صفحه را دوباره باز کنید.";
-    output.textContent = "ناموجود";
+  if(!Array.isArray(list)){
+   throw new Error("Invalid currency list");
   }
+
+  currencyNames = {};
+
+  list.forEach(item=>{
+   if(item.iso_code){
+    currencyNames[item.iso_code] = item.name || item.iso_code;
+   }
+  });
+
+  // افغانی را در فهرست نگه می‌داریم
+  currencyNames.AFN = currencyNames.AFN || "Afghan Afghani";
+
+  const codes = Object.keys(currencyNames).sort();
+
+  from.innerHTML = "";
+  to.innerHTML = "";
+
+  codes.forEach(code=>{
+   from.add(new Option(currencyLabel(code),code));
+   to.add(new Option(currencyLabel(code),code));
+  });
+
+  from.value = "USD";
+  to.value = "AFN";
+
+  if(to.value !== "AFN"){
+   to.value = codes.includes("EUR") ? "EUR" : codes[0];
+  }
+
+  update.textContent =
+   "فهرست ارزها دریافت شد. در حال دریافت نرخ تبدیل...";
+
+  await convertCurrency();
+  await loadMarketRates();
+
+ }catch(error){
+  currencyNames.AFN = "افغانی افغانستان";
+  update.textContent =
+   "دریافت فهرست ارزها ناموفق بود. اتصال اینترنت را بررسی کنید.";
+
+  output.textContent = "ناموجود";
+  details.textContent = "امکان دریافت اطلاعات ارزها وجود ندارد.";
+ }
 }
 
 async function getRate(base,target){
-  if(base === target) return 1;
+ if(base === target){
+  return {rate:1,date:""};
+ }
 
-  const response = await fetch(
-    API + "/latest?base=" + encodeURIComponent(base) +
-    "&symbols=" + encodeURIComponent(target)
-  );
+ const data = await requestJSON(
+  API + "/rate/" +
+  encodeURIComponent(base.toLowerCase()) + "/" +
+  encodeURIComponent(target.toLowerCase())
+ );
 
-  if(!response.ok) throw new Error("Rate unavailable");
+ if(!data || !Number.isFinite(Number(data.rate))){
+  throw new Error("Rate unavailable");
+ }
 
-  const data = await response.json();
-  if(!data.rates || data.rates[target] == null){
-    throw new Error("This currency pair is unavailable");
-  }
-
-  return {rate:data.rates[target],date:data.date};
+ return {
+  rate:Number(data.rate),
+  date:data.date || ""
+ };
 }
 
 async function convertCurrency(){
-  const value = Number(amount.value);
-  const base = from.value;
-  const target = to.value;
+ const value = Number(amount.value);
+ const base = from.value;
+ const target = to.value;
 
-  if(!Number.isFinite(value) || value < 0){
-    output.textContent = "مبلغ نامعتبر";
-    return;
-  }
+ if(!Number.isFinite(value) || value <= 0){
+  output.textContent = "مبلغ نامعتبر";
+  details.textContent = "یک مبلغ بیشتر از صفر وارد کنید.";
+  return;
+ }
 
-  output.textContent = "در حال محاسبه...";
-  details.textContent = "";
+ if(!base || !target){
+  output.textContent = "ارز انتخاب نشده";
+  return;
+ }
 
-  try{
-    const result = await getRate(base,target);
-    const rate = typeof result === "number" ? result : result.rate;
-    const date = typeof result === "number" ? "" : result.date;
-    const converted = value * rate;
+ convertButton.disabled = true;
+ output.textContent = "در حال محاسبه...";
+ details.textContent = "";
 
-    output.textContent = new Intl.NumberFormat("en-US",{
-      maximumFractionDigits:4
-    }).format(converted) + " " + target;
+ try{
+  const result = await getRate(base,target);
+  const converted = value * result.rate;
 
-    details.textContent =
-      value.toLocaleString("en-US") + " " + base +
-      " = " + converted.toFixed(4) + " " + target;
+  output.textContent =
+   new Intl.NumberFormat("en-US",{
+    maximumFractionDigits:4
+   }).format(converted) + " " + target;
 
-    update.textContent = date
-      ? "تاریخ نرخ مرجع: " + date + " | نرخ‌ها ممکن است با تأخیر منتشر شوند."
-      : "نرخ تبدیل محاسبه شد.";
+  details.textContent =
+   value.toLocaleString("en-US") + " " + base +
+   " = " +
+   converted.toLocaleString("en-US",{
+    maximumFractionDigits:4
+   }) + " " + target;
 
-  }catch(error){
-    output.textContent = "نرخ در دسترس نیست";
-    details.textContent = "برای این جفت ارز فعلاً نرخ مرجع موجود نیست.";
-    update.textContent = "لطفاً ارز دیگری انتخاب کنید یا بعداً دوباره تلاش کنید.";
-  }
+  update.textContent =
+   "نرخ تبدیل: 1 " + base + " = " +
+   result.rate + " " + target +
+   (result.date ? " | تاریخ نرخ: " + result.date : "");
+
+ }catch(error){
+  output.textContent = "نرخ در دسترس نیست";
+  details.textContent =
+   "برای این جفت ارز نرخ مرجع قابل دریافت نیست.";
+  update.textContent =
+   "این جفت ارز را فعلاً نمی‌توان تبدیل کرد. لطفاً بعداً تلاش کنید.";
+ }finally{
+  convertButton.disabled = false;
+ }
 }
 
 async function loadMarketRates(){
-  const currencies = ["USD","EUR","GBP","AFN","INR","TRY"];
-  const container = document.getElementById("rates");
-  container.innerHTML = "";
+ const codes = [
+  "AFN","EUR","GBP","PKR","INR",
+  "AED","TRY","CAD","JPY"
+ ];
 
-  for(const code of currencies){
-    if(!currencyNames[code]) continue;
-    try{
-      const result = await getRate("USD",code);
-      const rate = typeof result === "number" ? result : result.rate;
-      const item = document.createElement("div");
-      item.className = "rate";
+ ratesBox.innerHTML = "";
 
-      const name = document.createElement("b");
-      name.textContent = code + " - " + currencyNames[code];
+ for(const code of codes){
+  if(!currencyNames[code]) continue;
 
-      const value = document.createElement("span");
-      value.textContent = rate.toLocaleString("en-US",{maximumFractionDigits:4});
+  const item = document.createElement("div");
+  item.className = "rate";
+  item.textContent = "در حال دریافت " + code + "...";
+  ratesBox.appendChild(item);
 
-      item.append(name,value);
-      container.appendChild(item);
-    }catch(error){}
+  try{
+   const result = await getRate("USD",code);
+
+   item.innerHTML = "";
+
+   const title = document.createElement("b");
+   title.textContent = currencyLabel(code);
+
+   const value = document.createElement("span");
+   value.textContent =
+    result.rate.toLocaleString("en-US",{
+     maximumFractionDigits:5
+    }) + " " + code;
+
+   item.append(title,value);
+
+  }catch(error){
+   item.textContent = code + " - نرخ موجود نیست";
   }
+ }
 
-  document.getElementById("rateDate").textContent =
-    "ارز پایه: دلار آمریکا | منبع: Frankfurter";
+ document.getElementById("rateDate").textContent =
+  "ارز پایه: دلار آمریکا | منبع: Frankfurter";
 }
 
-document.getElementById("convert").addEventListener("click",convertCurrency);
+document.getElementById("convert")
+ .addEventListener("click",convertCurrency);
 
-document.getElementById("swap").addEventListener("click",()=>{
+document.getElementById("swap")
+ .addEventListener("click",()=>{
   const oldFrom = from.value;
   from.value = to.value;
   to.value = oldFrom;
   convertCurrency();
-});
+ });
 
 amount.addEventListener("input",convertCurrency);
 from.addEventListener("change",convertCurrency);
@@ -241,5 +437,6 @@ to.addEventListener("change",convertCurrency);
 
 loadCurrencies();
 </script>
+
 </body>
 </html>
